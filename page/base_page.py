@@ -1,23 +1,24 @@
 from playwright.sync_api import Page, expect, Locator
-from locators.base_page_locators import BasePageUsersLocators
 
 
 class BasePage:
     def __init__(self, page: Page):
         self.page = page
-        self.locators = BasePageUsersLocators()
 
-    def go_to_main_page(self):
-        self.page.goto("https://demoqa.com/")
+    def input_text(self, locator, text: str):
+        self.page.locator(locator).fill(text)
 
-    def find(self, locator) -> Locator:
-        return self.page.locator(locator)
+    def click(self, locator):
+        self.page.locator(locator).click()
 
-    def go_to_elements_page(self):
-        self.find(self.locators.elements_page_button_locator).click()
+    def check_is_element_visible(self, locator):
+        self.page.locator(locator).is_visible()
 
-    def go_to_forms_page(self):
-        self.find(self.locators.forms_page_button_locator).click()
+    def is_element_not_visible(self, locator):
+        self.page.locator(locator).is_hidden()
 
-    def go_to_frame_and_windows_page(self):
-        self.find(self.locators.alerts_page_button_frame_and_windows).click()
+    def check_is_element_enabled(self, locator):
+        self.page.locator(locator).is_enabled()
+
+    def is_page_opened_on_correct_url(self, url):
+        expect(self.page).to_have_url(url)
