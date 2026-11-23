@@ -1,4 +1,4 @@
-from enum import Enum, StrEnum
+from enum import StrEnum
 
 
 class MainPageUsersLocators(StrEnum):
@@ -10,3 +10,5 @@ class MainPageUsersLocators(StrEnum):
 
 class MainPageURL(StrEnum):
     ELEMENTS_PAGE_URL = "https://demoqa.com/elements"
+    FORMS_PAGE_URL = "https://demoqa.com/forms"
+    ALERT_FRAME_URl = "https://demoqa.com/alertsWindows"

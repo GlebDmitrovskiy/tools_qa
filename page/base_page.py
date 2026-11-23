@@ -12,13 +12,13 @@ class BasePage:
         self.page.locator(locator).click()
 
     def check_is_element_visible(self, locator):
-        self.page.locator(locator).is_visible()
+        expect(self.page.locator(locator)).to_be_visible()
 
     def is_element_not_visible(self, locator):
-        self.page.locator(locator).is_hidden()
+        expect(self.page.locator(locator)).to_be_hidden()
 
     def check_is_element_enabled(self, locator):
-        self.page.locator(locator).is_enabled()
+        expect(self.page.locator(locator)).to_be_enabled()
 
     def is_page_opened_on_correct_url(self, url):
         expect(self.page).to_have_url(url)
