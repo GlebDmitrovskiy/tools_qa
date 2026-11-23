@@ -1,8 +1,12 @@
-class MainPageUsersLocators:
-    def __init__(self):
-        self.elements_page_button_locator = "//h5[text()='Elements']"
-        self.forms_page_button_locator = "//h5[text()='Forms']"
-        self.alerts_page_button_frame_and_windows = "//h5[text()='Alerts, Frame & Windows']"
-        self.elements_menu_locator = "//div[@class='element-list accordion-collapse collapse show']"
-        #TODO: Разделить на 2 класса Enum с локаторами и urlами
-        self.elements_page_url = "https://demoqa.com/elements"
+from enum import Enum, StrEnum
+
+
+class MainPageUsersLocators(StrEnum):
+    ELEMENTS_PAGE_BUTTON_LOCATOR = "//h5[text()='Elements']"
+    FORMS_PAGE_BUTTON_LOCATOR = "//h5[text()='Forms']"
+    ALERTS_PAGE_BUTTON_FRAME_AND_WINDOWS = "//h5[text()='Alerts, Frame & Windows']"
+    ELEMENTS_MENU_LOCATOR = "//div[@class='element-list accordion-collapse collapse show']"
+
+
+class MainPageURL(StrEnum):
+    ELEMENTS_PAGE_URL = "https://demoqa.com/elements"
