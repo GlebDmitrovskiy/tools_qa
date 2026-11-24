@@ -1,7 +1,7 @@
-from playwright.sync_api import Page, expect
-from page.main_page import MainPage
 import pytest
 import allure
+from playwright.sync_api import Page
+from page.main_page import MainPage
 
 
 class TestMainPage:

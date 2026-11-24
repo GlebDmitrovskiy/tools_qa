@@ -11,8 +11,17 @@ class BasePage:
     def click(self, locator):
         self.page.locator(locator).click()
 
+    def check_is_element_editable(self, locator):
+        expect(self.page.locator(locator)).to_be_editable()
+
     def check_is_element_visible(self, locator):
         expect(self.page.locator(locator)).to_be_visible()
+
+    def get_element_text(self, locator) -> str:
+        return self.page.locator(locator).inner_text()
+
+    def get_input_value(self, locator) -> str:
+        return self.page.locator(locator).input_value()
 
     def is_element_not_visible(self, locator):
         expect(self.page.locator(locator)).to_be_hidden()

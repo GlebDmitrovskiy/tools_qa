@@ -1,5 +1,5 @@
 import allure
-from playwright.sync_api import Page, expect, Locator
+from playwright.sync_api import Page
 from locators.main_page_locators import MainPageUsersLocators
 from locators.main_page_locators import MainPageURL
 from page.base_page import BasePage
