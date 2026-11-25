@@ -14,9 +14,12 @@ class TestElementsPage:
             self.elements_page.go_to_main_page()
         with allure.step("Открыть страницу element"):
             self.elements_page.go_to_elements_page()
-        self.elements_page.go_to_text_box()
+        with allure.step("Открыть страницу Text Box"):
+            self.elements_page.go_to_text_box()
         self.elements_page.input_text_full_name_field(user_data.get("fullname"))
+        self.elements_page.input_text_email_field(user_data.get("email"))
+        self.elements_page.input_text_current_address_field(user_data.get("address"))
+        self.elements_page.input_text_permanent_address_field(user_data.get("address"))
         self.elements_page.click_submit_button()
-        entered_name = self.elements_page.get_full_name_input_value()
-        displayed_name = self.elements_page.get_output_full_name_text()
-        assert self.elements_page.get_full_name_input_value() == self.elements_page.get_output_full_name_text(), f"Ожидали '{entered_name}', но получили '{displayed_name}'"
+        self.elements_page.check_submitted_data()
+        
