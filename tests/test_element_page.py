@@ -23,3 +23,25 @@ class TestElementsPage:
         self.elements_page.click_submit_button()
         self.elements_page.check_submitted_data()
         
+    def test_expand_and_select_all_checkboxes(self):
+        with allure.step("Открыть главную страницу"):
+            self.elements_page.go_to_main_page()
+        with allure.step("Открыть страницу element"):
+            self.elements_page.go_to_elements_page()
+        with allure.step("Открыть страницу check_box"):
+            self.elements_page.go_to_check_box()
+        self.elements_page.expand_all_folders()
+        self.elements_page.select_all_checkboxes()
+
+    def test_radio_button(self):
+        with allure.step("Открыть главную страницу"):
+            self.elements_page.go_to_main_page()
+        with allure.step("Открыть страницу element"):
+            self.elements_page.go_to_elements_page()
+        with allure.step("Открыть страницу radio button"):
+            self.elements_page.go_to_radio_button()
+        self.elements_page.click_radio_button_yes()
+        self.elements_page.check_radio_button_yes()
+        self.elements_page.click_radio_button_impressive()
+        self.elements_page.check_radio_button_impressive()
+        self.elements_page.check_radio_button_no()

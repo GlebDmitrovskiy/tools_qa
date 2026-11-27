@@ -26,6 +26,9 @@ class BasePage:
     def is_element_not_visible(self, locator):
         expect(self.page.locator(locator)).to_be_hidden()
 
+    def is_element_not_enabled(self, locator):
+        expect(self.page.locator(locator)).to_be_disabled()
+
     def check_is_element_enabled(self, locator):
         expect(self.page.locator(locator)).to_be_enabled()
 
